@@ -19,7 +19,8 @@
 - Kubectl
 - DockerHub 계정 (이미지 푸시를 원할 경우)
 
-![IMG_0076](https://github.com/user-attachments/assets/ca6a6abb-a21a-4e57-ad45-1190d461ea57)
+![image](https://github.com/user-attachments/assets/76cfdba7-0314-4fd8-9f88-f28f1212af3a)
+
 
 - 이 다이어그램을 목표로 한다.
 
