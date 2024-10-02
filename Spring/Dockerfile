@@ -2,7 +2,7 @@
 FROM openjdk:17-jdk-alpine
 
 # 빌드된 jar 파일을 컨테이너에 복사
-ARG JAR_FILE=target/my-spring-app.jar
+ARG JAR_FILE=SpringApp-0.0.1-SNAPSHOT.jar
 COPY ${JAR_FILE} app.jar
 
 # jar 파일 실행
