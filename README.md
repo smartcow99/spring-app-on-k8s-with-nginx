@@ -6,6 +6,12 @@
 ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![k8s](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white) ![]()
 
+## 👨‍💻Team
+
+|<img src="https://avatars.githubusercontent.com/u/139302518?v=4" width="100" height="100"/>|<img src="https://avatars.githubusercontent.com/u/78792358?v=4" width="100" height="100"/>|
+|:-:|:-:|
+|곽병찬<br/>[@gato-46](https://github.com/gato-46)|박현우<br/>[@smartcow99](https://github.com/smartcow99)|
+
 ## 사전 준비 사항
 
 - Docker
@@ -14,6 +20,7 @@
 - DockerHub 계정 (이미지 푸시를 원할 경우)
 
 ---
+
 
 ## 1단계: Spring 애플리케이션 도커화
 
