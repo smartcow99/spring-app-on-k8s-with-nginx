@@ -2,6 +2,10 @@
 
 이 저장소는 Spring Boot 애플리케이션을 컨테이너화하고, Kubernetes에 3개의 복제본으로 배포한 후, NGINX를 외부 통신을 위한 리버스 프록시로 설정하는 방법을 보여줍니다.
 
+## 사용 기술
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![k8s](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white) ![]()
+
 ## 사전 준비 사항
 
 - Docker
