@@ -19,6 +19,10 @@
 - Kubectl
 - DockerHub 계정 (이미지 푸시를 원할 경우)
 
+![IMG_0076](https://github.com/user-attachments/assets/ca6a6abb-a21a-4e57-ad45-1190d461ea57)
+
+- 이 다이어그램을 목표로 한다.
+
 ---
 
 
@@ -240,6 +244,7 @@
 ![image (2)](https://github.com/user-attachments/assets/69b875d0-dd87-48ae-a271-1b800e7c313b)
 
 ---
+
 
 ### 결론
 
