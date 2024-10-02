@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-app-deployment
+spec:
+  replicas: 3  # 3개의 애플리케이션 Pod
+  selector:
+    matchLabels:
+      app: spring-app
+  template:
+    metadata:
+      labels:
+        app: spring-app
+    spec:
+      containers:
+      - name: spring-app-container
+        image: <your-dockerhub-username>/my-spring-app:latest  # Docker 이미지 사용
+        ports:
+        - containerPort: 8080  # 8080 포트 노출
