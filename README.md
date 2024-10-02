@@ -217,6 +217,15 @@
 
 3. 브라우저 또는 `curl` 명령어를 통해 할당된 `EXTERNAL-IP`로 접속하여 NGINX가 Spring 애플리케이션으로 트래픽을 제대로 전달하는지 확인합니다.
 
+4. Log를 확인하여 관리한다
+    ```bash
+    kubectl logs <pod name>
+    ```
+
+5. Dashboard 를 활용하여 모니터링
+
+![image (2)](https://github.com/user-attachments/assets/69b875d0-dd87-48ae-a271-1b800e7c313b)
+
 ---
 
 ### 결론
