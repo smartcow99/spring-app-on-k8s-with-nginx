@@ -218,3 +218,61 @@
 ### 결론
 
 이 과정은 Spring 애플리케이션을 컨테이너화하고, Kubernetes에 NGINX 리버스 프록시를 통해 배포하는 방법을 다룹니다. 이 단계를 따라하면 클라우드 네이티브 환경에서 애플리케이션을 효율적으로 관리하고 확장할 수 있습니다.
+
+### 트러블 슈팅
+
+#### Spring App, Nginx `deployment.yaml`파일 작성 중 다음과 같은 경고 발생
+`One or more containers do not have resource limits - this could starve other processes`
+
+
+변경 이전
+```yaml
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: spring-app-service
+    spec:
+      selector:
+        app: spring-app
+      ports:
+      - protocol: TCP
+        port: 80  # 외부 포트
+        targetPort: 8080  # Spring 컨테이너 포트
+      type: LoadBalancer  # 외부 트래픽을 허용하기 위한 타입
+```
+변경 이후
+```yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-app-deployment
+spec:
+  replicas: 3  # 3개의 애플리케이션 Pod
+  selector:
+    matchLabels:
+      app: spring-app
+  template:
+    metadata:
+      labels:
+        app: spring-app
+    spec:
+      containers:
+      - name: spring-app-container
+        image: gato46/my-spring-app:latest  # Docker 이미지 사용
+        ports:
+        - containerPort: 8080  # 8080 포트 노출
+        resources:
+          requests:
+            memory: "512Mi"  # 최소 512Mi 메모리 요청
+            cpu: "500m"      # 최소 0.5 CPU 코어 요청
+          limits:
+            memory: "1Gi"    # 최대 1Gi 메모리 사용 제한
+            cpu: "1"         # 최대 1 CPU 코어 사용 제한
+```
+##### 설명
+- `resources` 섹션 추가:
+  - `requests`: Kubernetes는 이 값을 기반으로 Pod를 스케줄링하고, 최소한으로 보장되는 리소스 양입니다.
+  - `limits`: 이 값을 초과하면 컨테이너가 강제로 제한됩니다. 예를 들어, 메모리 제한을 넘으면 컨테이너가 종료될 수 있습니다.
+
+이 설정을 통해 Pod가 너무 많은 자원을 사용하는 것을 방지하고, 다른 Pod 및 프로세스들이 안정적으로 자원을 사용할 수 있게 됩니다.
